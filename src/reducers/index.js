@@ -7,3 +7,10 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+export function fetchRecentPosts() {
+  return function (dispatch) {
+    //perform our request in here.
+    console.log("hello");
+  };
+}
