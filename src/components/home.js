@@ -9,13 +9,14 @@ import * as actions from "../actions";
 
 class Home extends Component {
   handleSearchBarSubmit(query) {
-    this.props.fetchPostsWithQuery(query);
-    this.props.history.push("/results");
+    this.props.fetchPostsWithQuery(query, () => {
+      this.props.history.push("/results");
+    });
   }
 
   render() {
     return (
-      <div className="app">
+      <div>
         <div>
           <Logo />
           <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)} />
@@ -25,3 +26,5 @@ class Home extends Component {
     );
   }
 }
+
+export default connect(null, actions)(Home);

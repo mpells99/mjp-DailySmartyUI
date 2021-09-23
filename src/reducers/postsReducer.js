@@ -19,7 +19,6 @@ export default function (state = INIT_STATE, action) {
         ...state,
         resultsPosts,
       };
-
     default:
       return state;
   }
